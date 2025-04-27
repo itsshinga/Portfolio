@@ -1,0 +1,264 @@
+/* --- Page wrapper inset --- */
+.page-wrapper {
+  padding: 0 64px;
+}
+@media (max-width: 576px) {
+  .page-wrapper {
+    padding: 0 16px;
+  }
+}
+
+/* --- Global resets & fonts --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  color: #222;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Instrument Serif', serif;
+}
+a {
+  text-decoration: none;
+}
+
+/* --- Header --- */
+header {
+  padding: 0.75rem 0;
+}
+
+/* --- Hero --- */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 70vh;
+}
+.hero-content {
+  max-width: 600px;
+}
+.hero-title {
+  font-size: 2.8rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+.hero-tagline {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  color: #aaa;
+}
+.btn-modern {
+  display: inline-block;
+  margin: 0 auto;
+}
+.btn-outline-primary.btn-modern {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  border: 1px solid #0d6efd;
+  color: #0d6efd;
+  border-radius: 50px;
+  padding: 6px 12px;
+}
+.btn-outline-primary.btn-modern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #0d6efd;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50px;
+  z-index: -1;
+}
+.btn-outline-primary.btn-modern:hover {
+  color: #fff;
+}
+.btn-outline-primary.btn-modern:hover::before {
+  opacity: 1;
+}
+
+/* --- About --- */
+.about {
+  padding: 2rem 0;
+  margin-bottom: 100px !important;
+}
+.about h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
+}
+.about-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+.avatar-wrapper {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 250px;
+  background: #d7e3ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.about-text {
+  max-width: 600px;
+  line-height: 1.6;
+}
+@media (max-width: 576px) {
+  .about-row {
+    flex-direction: column;
+    text-align: center;
+  }
+  .avatar-wrapper {
+    margin-bottom: 1.5rem;
+  }
+  .about-text {
+    max-width: 100%;
+  }
+}
+
+/* --- Footer (full-width bg, content inset) --- */
+.site-footer {
+  width: 100%;
+  background: #333;
+}
+.site-footer .footer-inner {
+  max-width: 1200px;       /* change to your desired max content width */
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.footer-avatar img {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+}
+.footer-name {
+  font-family: 'Instrument Serif', serif;
+  color: #fff;
+  font-size: 1.125rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.footer-icon {
+  margin-left: auto;
+  color: #fff;
+  font-size: 1.5rem;
+}
+.footer-icon:hover {
+  color: #aaa;
+}
+
+@media (max-width: 576px) {
+  .site-footer .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-icon {
+    margin: 1rem 0 0;
+  }
+}
+
+
+/* --- Projects Section (desktop flex layout) --- */
+.projects {
+  padding: 2rem 0;
+  margin-bottom: 100px;
+}
+.projects h1 {
+  text-align: left;      /* or center, as you prefer */
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+.project-row {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.project-card {
+  flex: 1 1 300px;       /* base=300px, will grow/shrink */
+  max-width: 600px;
+  background-color: #f7faff;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.project-title {
+  padding: 1rem;
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.125rem;
+  text-align: center;
+  display: block;        /* ensure visible */
+}
+
+.project-card {
+  /* keep these if you haven’t already */
+  background-color: #f7faff;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  /* new: smooth transition for transform & shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  /* lift it up slightly */
+  transform: translateY(-2px);
+
+  /* soft drop-shadow */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+
+  /* show it’s clickable */
+  cursor: pointer;
+}
+
+
+/* --- MOBILE OVERRIDE --- */
+@media (max-width: 576px) {
+  .project-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .project-card {
+    flex: none;
+    width: 100%;
+    max-width: none;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+  }
+  .project-card img {
+    width: 100%;
+    height: auto;
+  }
+}
+

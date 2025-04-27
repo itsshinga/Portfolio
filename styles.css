@@ -185,6 +185,20 @@ header {
   }
 }
 
+@media (max-width: 576px) {
+  .about-row {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;           
+  }
+  .avatar-wrapper {
+    margin-bottom: 1rem; 
+  }
+}
+
+
+/* -- Footer --*/
+
 .site-footer {
   width: 100%;
   background: #333;
@@ -395,4 +409,31 @@ header {
 
 .project-text {
 color: #757575;
+}
+
+
+.hero-title span {
+  display: block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+.hero-title .line {
+  display: block;             
+  opacity: 0;                  
+  transform: translateY(20px); 
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+/* stagger delays */
+.hero-title .line:nth-of-type(1) { animation-delay: 0.2s; }
+.hero-title .line:nth-of-type(2) { animation-delay: 0.4s; }
+.hero-title .line:nth-of-type(3) { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

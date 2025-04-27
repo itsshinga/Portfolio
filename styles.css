@@ -31,7 +31,6 @@ a {
   justify-content: space-between;
 }
 
-/* optional: gap between avatar and “SHINGA” */
 .header-brand {
   gap: 0.5rem;
 }
@@ -182,13 +181,13 @@ header {
   }
 }
 
-/* --- Footer (full-width bg, content inset) --- */
+/* --- Footer --- */
 .site-footer {
   width: 100%;
   background: #333;
 }
 .site-footer .footer-inner {
-  max-width: 1200px;       /* change to your desired max content width */
+  max-width: 1200px;      
   margin: 0 auto;
   padding: 1rem 2rem;
   display: flex;
@@ -277,7 +276,6 @@ header {
   display: flex;
   flex-direction: column;
 
-  /* new: smooth transition for transform & shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -288,7 +286,6 @@ header {
   /* soft drop-shadow */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 
-  /* show it’s clickable */
   cursor: pointer;
 }
 
@@ -312,3 +309,47 @@ header {
   }
 }
 
+
+/* Desktop hero */
+.project-hero {
+  position: relative;
+  height: 75vh;
+  overflow: hidden;
+}
+
+.project-hero__img {
+  object-fit: cover;
+  width: 200px;    
+  height: 100%;
+}
+
+/* Mobile tweaks for project hero */
+@media (max-width: 767.98px) {
+  .project-hero {
+    height: auto;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .project-hero__img {
+    height: auto;          
+    max-height: 45vh;     
+  }
+
+  .project-hero__content {
+    position: relative;
+    top: auto;
+    transform: none;
+    margin-top: -4rem;     
+  }
+
+  .project-hero__content h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-hero__content p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}

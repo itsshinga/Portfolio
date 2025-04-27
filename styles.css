@@ -25,10 +25,61 @@ a {
   text-decoration: none;
 }
 
-/* --- Header --- */
-header {
-  padding: 0.75rem 0;
+/* make your header flex full-width */
+.header-inner {
+  width: auto;
+  justify-content: space-between;
 }
+
+/* optional: gap between avatar and “SHINGA” */
+.header-brand {
+  gap: 0.5rem;
+}
+
+/* style the name in the header */
+.header-name {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.125rem;
+  margin-left: 0.5rem;
+  color: #0d6efd;
+}
+
+/* push icon to the right */
+.header-icon {
+  font-size: 1.5rem;
+  color: #0d6efd;
+  transition: color 0.2s ease;
+}
+
+/* hover color */
+.header-icon:hover {
+  color: #024ab7;
+}
+
+/* — HEADER BREAK-OUT — */
+header .header-inner {
+  position: relative;
+  margin: 0 -64px;          
+  padding: 0.8rem 44px;      
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+
+header {
+  padding: 1.5rem 0;   
+}
+
+
+@media (max-width: 576px) {
+  header .header-inner {
+    margin: 0 -16px;
+    padding: 1rem 16px;
+  }
+}
+
 
 /* --- Hero --- */
 .hero {
@@ -186,7 +237,7 @@ header {
   margin-bottom: 100px;
 }
 .projects h1 {
-  text-align: left;      /* or center, as you prefer */
+  text-align: left;      
   font-size: 2rem;
   margin-bottom: 1.5rem;
   letter-spacing: 0.5px;
@@ -198,7 +249,7 @@ header {
   flex-wrap: wrap;
 }
 .project-card {
-  flex: 1 1 300px;       /* base=300px, will grow/shrink */
+  flex: 1 1 300px;       
   max-width: 600px;
   background-color: #f7faff;
   border-radius: 8px;
@@ -216,11 +267,10 @@ header {
   font-family: 'Instrument Serif', serif;
   font-size: 1.125rem;
   text-align: center;
-  display: block;        /* ensure visible */
+  display: block;       
 }
 
 .project-card {
-  /* keep these if you haven’t already */
   background-color: #f7faff;
   border-radius: 8px;
   overflow: hidden;

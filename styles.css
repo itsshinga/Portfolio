@@ -185,28 +185,32 @@ header {
   }
 }
 
-/* --- Footer --- */
 .site-footer {
   width: 100%;
   background: #333;
 }
+
 .site-footer .footer-inner {
   max-width: 1200px;      
   margin: 0 auto;
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
+  justify-content: space-between; /* Add this! */
 }
+
 .footer-brand {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
+
 .footer-avatar img {
   width: 100px;
   height: auto;
   object-fit: cover;
 }
+
 .footer-name {
   font-family: 'Instrument Serif', serif;
   color: #fff;
@@ -214,24 +218,44 @@ header {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
+.footer-copy {
+  color: #ccc;
+  font-size: 14px;
+  text-align: center;
+}
+
 .footer-icon {
-  margin-left: auto;
   color: #fff;
   font-size: 1.5rem;
 }
+
 .footer-icon:hover {
   color: #aaa;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .site-footer .footer-inner {
     flex-direction: column;
+    align-items: center;
     text-align: center;
+    justify-content: flex-start;
   }
+
+  .footer-brand,
+  .footer-icon,
+  .footer-copy {
+    margin: 0.5rem 0;
+  }
+
   .footer-icon {
-    margin: 1rem 0 0;
+    order: 1;
+  }
+  .footer-copy {
+    order: 2;
   }
 }
+
 
 
 /* --- Projects Section (desktop flex layout) --- */
@@ -290,9 +314,9 @@ header {
 
   /* soft drop-shadow */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-
-  cursor: pointer;
 }
+
+
 
 .project-card .project-link .project-title {
   color: #222;

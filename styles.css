@@ -25,57 +25,64 @@ a {
   text-decoration: none;
 }
 
-/* make your header flex full-width */
-.header-inner {
-  width: auto;
-  justify-content: space-between;
+/* Make the header itself fixed and full-width with a glassy background */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.1rem 2rem;           
+  background: rgba(255, 255, 255, 0.2);  
+  backdrop-filter: blur(10px);    
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1000;                  
+  box-sizing: border-box;
 }
 
+header .header-inner {
+  max-width: none;
+  width: 100%;
+  padding: 0.8rem 2rem;        
+  margin: 0;                
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* Logo + name group */
 .header-brand {
+  display: flex;
+  align-items: center;
   gap: 0.5rem;
 }
 
-/* style the name in the header */
+/* Your name styling */
 .header-name {
   font-family: 'Instrument Serif', serif;
   font-size: 1.125rem;
-  margin-left: 0.5rem;
   color: #0d6efd;
 }
 
-/* push icon to the right */
+/* Icon on the right */
 .header-icon {
   font-size: 1.5rem;
   color: #0d6efd;
   transition: color 0.2s ease;
 }
-
-/* hover color */
 .header-icon:hover {
   color: #024ab7;
 }
 
-/* — HEADER BREAK-OUT — */
-header .header-inner {
-  position: relative;
-  margin: 0 -64px;          
-  padding: 0.8rem 44px;      
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
+body {
+  padding-top: 4rem;  
 }
-
-
-header {
-  padding: 1.5rem 0;   
-}
-
 
 @media (max-width: 576px) {
   header .header-inner {
-    margin: 0 -16px;
-    padding: 1rem 16px;
+    padding: 0.8rem 1rem;    
+    justify-content: center; 
+    gap: 20rem;              
   }
 }
 
@@ -87,6 +94,8 @@ header {
   align-items: center;
   text-align: center;
   height: 70vh;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 .hero-content {
   max-width: 600px;
@@ -236,7 +245,7 @@ header {
 .footer-copy {
   color: #ccc;
   font-size: 14px;
-  text-align: center;
+  text-align: center !important;
 }
 
 .footer-icon {

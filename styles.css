@@ -82,9 +82,11 @@ body {
   header .header-inner {
     padding: 0.8rem 1rem;    
     justify-content: center; 
-    gap: auto;              
+    gap: 12rem;              
   }
 }
+
+
 
 
 /* --- Hero --- */
@@ -143,6 +145,13 @@ body {
 }
 .btn-outline-primary.btn-modern:hover::before {
   opacity: 1;
+}
+
+
+@media (max-width: 576px) {
+  .hero-title {
+   font-size: 2.2rem;
+}
 }
 
 /* --- About --- */
